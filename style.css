@@ -1,0 +1,196 @@
+/* Grundstil für den gesamten Body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    color: #D9D9D9;
+    background-color: #0B0B0B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#index_body {
+    background-image: url('img/dark_stone_wall.png');
+}
+
+/* Container-Box für Inhalt */
+.container {
+    max-width: 800px;
+    padding: 2em;
+    background: rgba(0, 0, 0, 0.75); /* Halbtransparenter Hintergrund für Lesbarkeit */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Titel und Kopfzeile */
+.header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #E63946;
+    text-shadow: 2px 2px 5px #000;
+    animation: pulse 1.5s infinite alternate;
+}
+
+/* Einführungsabsatz */
+.introduction p {
+    margin: 1em 0;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #D9D9D9;
+    text-shadow: 1px 1px 4px #111;
+}
+
+/* Absatz-Spezialeffekte */
+#intro_start {
+    animation: appearText 2s ease-out;
+}
+
+#intro_middle {
+    animation: appearText 4s ease-out;
+}
+
+#intro_end {
+    animation: appearText 6s ease-out;
+    font-style: italic;
+    color: #E63946;
+}
+
+.start-button {
+    margin-top: 2em;
+}
+
+.start-button button {
+    padding: 0.8em 2em;
+    font-size: 1.2em;
+    color: #D9D9D9;
+    background-color: #E63946;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+}
+
+.start-button button:hover {
+    background-color: #A92E38;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    transform: translateY(-3px);
+}
+
+/* Schlüssige CSS-Animationen */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { text-shadow: 2px 2px 5px #000, 0 0 10px #E63946; }
+    100% { text-shadow: 2px 2px 10px #000, 0 0 20px #E63946; }
+}
+
+@keyframes appearText {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Grundlayout für den Gang */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    color: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+    overflow: hidden;
+}
+
+/* Container für den Gang */
+.corridor {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Wand-Styles */
+.wall {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    background-color: #444;
+    border: 1px solid #222;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+/* Linke Wand */
+.left-wall {
+    left: 0;
+    transform: rotateY(45deg) translateZ(-200px);
+}
+
+/* Rechte Wand */
+.right-wall {
+    right: 0;
+    transform: rotateY(-45deg) translateZ(-200px);
+}
+
+/* Mittlere Wand (als Korridor-Ende) */
+.center-wall {
+    width: 50%;
+    height: 120%;
+    background-color: #333;
+    transform: translateZ(-500px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Boden und Decke */
+.floor, .ceiling {
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background-color: #666;
+    transform-origin: center;
+}
+
+.floor {
+    bottom: 0;
+    transform: rotateX(90deg) translateZ(-200px);
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.6);
+}
+
+.ceiling {
+    top: 0;
+    transform: rotateX(-90deg) translateZ(-150px);
+}
+
+/* Textinhalt in der Mitte des Gangs */
+.content {
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    color: #D9D9D9;
+    z-index: 1;
+}
+
+.content h1 {
+    font-size: 2.5em;
+    color: #E63946;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.content p {
+    font-size: 1.2em;
+}
