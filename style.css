@@ -114,7 +114,13 @@ body {
     overflow: hidden;
 }
 
-/* Container für den Gang */
+.choice_corridor {
+    background-image: url('img/background.PNG');
+    background-size: 100% 100%;
+    
+}
+
+/* Container für den Gang 
 .corridor {
     position: relative;
     width: 100vw;
@@ -124,8 +130,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+    */
 
-/* Wand-Styles */
+/* Wand-Styles 
 .wall {
     position: absolute;
     width: 30%;
@@ -133,30 +140,30 @@ body {
     background-color: #444;
     border: 1px solid #222;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-}
+}*/
 
-/* Linke Wand */
+/* Linke Wand 
 .left-wall {
     left: 0;
     transform: rotateY(45deg) translateZ(-200px);
-}
+}*/
 
-/* Rechte Wand */
+/* Rechte Wand
 .right-wall {
     right: 0;
     transform: rotateY(-45deg) translateZ(-200px);
-}
+} */
 
-/* Mittlere Wand (als Korridor-Ende) */
+/* Mittlere Wand (als Korridor-Ende) 
 .center-wall {
     width: 50%;
     height: 120%;
     background-color: #333;
     transform: translateZ(-500px);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-}
+}*/
 
-/* Boden und Decke */
+/* Boden und Decke 
 .floor, .ceiling {
     position: absolute;
     width: 100%;
@@ -173,7 +180,7 @@ body {
 
 .ceiling {
     top: 0;
-    transform: rotateX(-90deg) translateZ(-150px);
+    transform: rotateX(-90deg) translateZ(-200px);
 }
 
 /* Textinhalt in der Mitte des Gangs */
