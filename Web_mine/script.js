@@ -11,8 +11,8 @@ function buildField() {
     for (let j = 0; j < x; j++){
       const td = tr.insertCell();
       const button = document.createElement('button');
-      td.style.width = "200px";
-      td.style.height = "200px";
+      button.style.width = "200px";
+      button.style.height = "200px";
       td.appendChild(button);
     }
   }
