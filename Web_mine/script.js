@@ -14,7 +14,7 @@ function buildField() {
       button.style.width = "50px";
       button.style.height = "50px";
       button.setAttribute("id",i +";" + j);
-      button.onclick = logButton(id);
+      button.onclick = logButton(doWithThisElement(this.id));
       td.appendChild(button);
     }
   }
@@ -22,5 +22,5 @@ function buildField() {
 }
 
 function logButton(id){
-  console.log(id);;
+  console.log(id);
 }
