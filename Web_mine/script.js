@@ -1,3 +1,3 @@
 function buildField() {
-  alert("Test");
+  console.log("Test");
 }
