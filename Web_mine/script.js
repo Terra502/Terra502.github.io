@@ -1,3 +1,4 @@
 function buildField() {
-  console.log("Test");
+  const node = document.createElement("li");
+  document.getElementById("main").appendChild(node);  
 }
