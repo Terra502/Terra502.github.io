@@ -11,10 +11,16 @@ function buildField() {
     for (let j = 0; j < x; j++){
       const td = tr.insertCell();
       const button = document.createElement('button');
-      button.style.width = "200px";
-      button.style.height = "200px";
+      button.style.width = "50px";
+      button.style.height = "50px";
+      button.setAttribute("id",i +";" + j);
+      button.onclick = logButton(id);
       td.appendChild(button);
     }
   }
   body.appendChild(tbl);
+}
+
+function logButton(const id){
+  console.log(id);;
 }
