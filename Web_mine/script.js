@@ -11,7 +11,8 @@ function buildField() {
     for (let j = 0; j < x; j++){
       const td = tr.insertCell();
       td.appendChild(document.createElement('button'));
-      td.style.backgroundColor = "red";
+      td.style.width = "20px";
+      td.style.height = "20px";
     }
   }
   body.appendChild(tbl);
