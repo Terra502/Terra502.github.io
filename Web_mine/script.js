@@ -2,7 +2,7 @@ function buildField() {
   const x = 10;
   const y = 10;
   const body = document.body,
-        tbl = document.createElement('table');
+    tbl = document.createElement('table');
   tbl.style.width = '100px';
   tbl.style.border = '1px solid black';
 
@@ -10,9 +10,10 @@ function buildField() {
     const tr = tbl.insertRow();
     for (let j = 0; j < x; j++){
       const td = tr.insertCell();
-      td.appendChild(document.createElement('button'));
+      const button document.createElement('button');
       td.style.width = "20px";
       td.style.height = "20px";
+      td.appendChild(button);
     }
   }
   body.appendChild(tbl);
