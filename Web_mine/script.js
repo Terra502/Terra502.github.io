@@ -1,4 +1,7 @@
 function buildField() {
-  const node = document.createElement("li");
-  document.getElementById("main").appendChild(node);  
+  const para = document.createElement("p");
+  const node = document.createTextNode("Test Para");
+
+  para.appendChild(node);
+  document.getElementById("main").appendChild(para);
 }
