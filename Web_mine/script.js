@@ -21,6 +21,6 @@ function buildField() {
   body.appendChild(tbl);
 }
 
-function logButton(const id){
+function logButton(id){
   console.log(id);;
 }
