@@ -68,29 +68,63 @@ function incrementNeighbors(x, y) {
   }
 }
 
-function clickedButton(id){
+function clickedButton(id) {
   const temp_array = id.split(";");
-  var temp_x = parseInt(temp_array[0]);
-  var temp_y = parseInt(temp_array[1]);
-  id = temp_x + ";" + temp_y;
-  var button = document.getElementById(id);
+  const temp_x = parseInt(temp_array[0]);
+  const temp_y = parseInt(temp_array[1]);
+  const button = document.getElementById(id);
+
   if (!boolArray[temp_x][temp_y]) {
     button.style.background = '#ffffff';
     fieldscleared++;
     button.textContent = intArray[temp_x][temp_y];
-    if (intArray[temp_x][temp_y] == 0) {
-      //checkNeighhors(temp_x, temp_y);
-      aufdeckenObenRechts(temp_x, temp_y);
-      checkForWin();
+
+    if (intArray[temp_x][temp_y] === 0) {
+      // Start rekursives Aufdecken
+      revealEmptyFields(temp_x, temp_y, new Set());
     }
+    checkForWin();
   } else {
+    alert("Spiel verloren!");
     location.reload();
+  }
+}
+
+function revealEmptyFields(x, y, visited) {
+  const id = `${x};${y}`;
+  if (visited.has(id)) return; // Abbruchkriterium
+  visited.add(id);
+
+  const directions = [
+    [-1, -1], [-1, 0], [-1, 1], // oben links, oben, oben rechts
+    [0, -1],          [0, 1],   // links, rechts
+    [1, -1], [1, 0], [1, 1]     // unten links, unten, unten rechts
+  ];
+  for (const [dx, dy] of directions) {
+    const nx = x + dx;
+    const ny = y + dy;
+
+    if (nx >= 0 && nx < max_y && ny >= 0 && ny < max_x) {
+      const neighborId = `${nx};${ny}`;
+      const button = document.getElementById(neighborId);
+
+      if (!boolArray[nx][ny] && !visited.has(neighborId)) {
+        button.style.background = '#ffffff';
+        fieldscleared++;
+        button.textContent = intArray[nx][ny];
+
+        // Rekursiv nur für leere Felder
+        if (intArray[nx][ny] === 0) {
+          revealEmptyFields(nx, ny, visited);
+        }
+      }
+    }
   }
 }
 
 function checkForWin() {
   if (fieldscleared >= (max_x * max_y - bombs)) {
-    alert("Gewonnen");
+    alert("Gewonnen!");
   }
 }
 
