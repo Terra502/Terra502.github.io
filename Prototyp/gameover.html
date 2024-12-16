@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Template</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                color: #fff;
+            }
+            100% {
+                opacity: 0;
+                color: #000;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                color: #000;
+            }
+            90% {
+                opacity: 0;
+                color: #000;
+            }
+            100% {
+                opacity: 1;
+                color: #ff0000;
+            }
+        }
+
+        #text1 {
+            animation: fadeOut 7s forwards;
+        }
+
+        #text2 {
+            animation: fadeIn 5s forwards;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Haus Z</h1>
+    <div id="middle-container">
+        <p id="text1" class="default-p">
+           Die Geräusche werden lauter und plötzlich ...
+        </p>
+        <p id="text2" style="opacity: 0;" class="default-p">
+           GAME OVER
+        </p>
+    </div>
+    <div id="bottom-container">
+        <a href="start.html" class="default-a">
+            <button class="default-button">Neustarten</button>
+        </a>
+    </div>
+</body>
+</html>

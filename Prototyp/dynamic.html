@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Template</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        #text1:target ~ #middle-container #text1-content,
+        #text2:target ~ #middle-container #text2-content {
+            display: block;
+        }
+
+        #text1:target ~ #middle-container #text2-content,
+        #text2:target ~ #middle-container #text1-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Haus Z</h1>
+    <a id="text1" class="hidden"></a>
+    <a id="text2" class="hidden"></a>
+    <div id="middle-container">
+        <p id="text1-content">
+            Du bist nun im vorderen Flur des Hauses.
+        </p>
+        <p id="text2-content" class="hidden">
+            Du untersuchst die Türen und findest nichts Ungewöhnliches.
+        </p>
+    </div>
+    <div id="bottom-container">
+        <a href="#text1">
+            <button>Zurück</button>
+        </a>
+        <a href="#text2">
+            <button>Türen untersuchen</button>
+        </a>
+    </div>
+</body>
+</html>
